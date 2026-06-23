@@ -3,6 +3,7 @@ Toy repo for learning about CI and github actions
 
 ![C++](https://github.com/fbottarel/ci_tests/actions/workflows/cpp-ci.yml/badge.svg)
 ![Python](https://github.com/fbottarel/ci_tests/actions/workflows/python-ci.yml/badge.svg)
+![Devcontainer](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/devcontainer-publish.yml/badge.svg)
 
 A sandbox for experimenting with C++ and Python CI and actions.
 
