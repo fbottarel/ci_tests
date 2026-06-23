@@ -1,0 +1,24 @@
+{
+    "name": "C++ Sandbox",
+    "image": "mcr.microsoft.com/devcontainers/cpp:1-ubuntu-24.04",
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",         // IntelliSense, debugging
+                "ms-vscode.cmake-tools",       // CMake integration
+                "twxs.cmake"                   // CMake syntax highlighting
+            ],
+            "settings": {
+                "cmake.buildDirectory": "${workspaceFolder}/cpp_sandbox/build",
+                "cmake.sourceDirectory": "${workspaceFolder}/cpp_sandbox"
+            }
+        }
+    },
+
+    // Forward no ports by default — add here if you ever run a local server
+    "forwardPorts": [],
+
+    // Uncomment to generate build directory and populate it with CMake files
+    // "postCreateCommand": "cmake -B cpp_sandbox/build -S cpp_sandbox"
+}
