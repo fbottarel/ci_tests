@@ -1,13 +1,11 @@
 {
     "name": "Sandbox",
-    "image": "mcr.microsoft.com/devcontainers/cpp:1-ubuntu-24.04",
- 
-    "features": {
-        "ghcr.io/devcontainers/features/python:1": {
-            "version": "3.12"
-        }
+    "image": "ghcr.io/fbottarel/ci_tests/devcontainer:latest",
+
+    "build": {
+        "dockerfile": "Dockerfile"   // fallback if image is not available
     },
- 
+
     "customizations": {
         "vscode": {
             "extensions": [
@@ -24,6 +22,8 @@
         }
     },
 
-    // Uncomment to generate build directory and populate it with CMake files
+    // Forward no ports by default — add here if you ever run a local server
+    "forwardPorts": [],
+
     "postCreateCommand": "cmake -B cpp_sandbox/build -S cpp_sandbox && pip install -r python_sandbox/requirements.txt"
 }
