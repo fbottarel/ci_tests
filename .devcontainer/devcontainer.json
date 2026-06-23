@@ -1,13 +1,21 @@
 {
-    "name": "C++ Sandbox",
+    "name": "Sandbox",
     "image": "mcr.microsoft.com/devcontainers/cpp:1-ubuntu-24.04",
-
+ 
+    "features": {
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.12"
+        }
+    },
+ 
     "customizations": {
         "vscode": {
             "extensions": [
                 "ms-vscode.cpptools",         // IntelliSense, debugging
                 "ms-vscode.cmake-tools",       // CMake integration
-                "twxs.cmake"                   // CMake syntax highlighting
+                "twxs.cmake",                  // CMake syntax highlighting
+                "ms-python.python",            // Python IntelliSense, debugging
+                "ms-python.vscode-pylance"     // Python language server
             ],
             "settings": {
                 "cmake.buildDirectory": "${workspaceFolder}/cpp_sandbox/build",
@@ -16,9 +24,6 @@
         }
     },
 
-    // Forward no ports by default — add here if you ever run a local server
-    "forwardPorts": [],
-
     // Uncomment to generate build directory and populate it with CMake files
-    // "postCreateCommand": "cmake -B cpp_sandbox/build -S cpp_sandbox"
+    "postCreateCommand": "cmake -B cpp_sandbox/build -S cpp_sandbox && pip install -r python_sandbox/requirements.txt"
 }
