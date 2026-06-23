@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - .devcontainer/**   # only rebuild when the devcontainer changes
+  workflow_dispatch:       # allows manual trigger from the Actions tab
  
 jobs:
   build-and-push:
