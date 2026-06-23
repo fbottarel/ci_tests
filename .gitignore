@@ -1,0 +1,7 @@
+# C++ build artifacts
+cpp_sandbox/build/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
